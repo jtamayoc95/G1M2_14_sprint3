@@ -1,7 +1,10 @@
 <template>
     <div id="UserBalance">
         <h2>{{username}}</h2>
-        <h2>Tu saldo es: <span> {{balance}} COP </span> </h2>
+        <h2>Nombre(s): <span> {{first_name}} </span> </h2>
+        <h2>Apellido(s): <span> {{last_name}}</span> </h2>
+        <h2>Correo: <span> {{email}}</span> </h2>
+        <h2>Celular: <span> {{phone}}</span> </h2>
     </div>
 </template>
 
@@ -12,7 +15,10 @@ export default {
     data: function (){
         return {
             username: "",
-            balance: 0
+            first_name: "",
+            last_name: "",
+            email: "",
+            phone: "",
         }
     },
 
@@ -20,7 +26,7 @@ export default {
         this.username = this.$route.params.username
         let self = this
 
-    axios.get("http://127.0.0.1:8000/user/balance/" + this.username)
+    axios.get("http://127.0.0.1:8000/user/data/" + this.username)
         .then((result) => {
             self.balance = result.data.balance
         })

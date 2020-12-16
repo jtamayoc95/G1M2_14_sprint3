@@ -1,6 +1,6 @@
 import vueRouter from 'vue-router'
 import User from './components/User'
-import getBalance from './components/UserBalance'
+import UserBalance from './components/UserBalance'
 
 import App from './App'
 
@@ -19,7 +19,7 @@ const router = new vueRouter({
             component: User
         },
         {
-            path: '/user/balance/:username',
+            path: '/user/data/:username',
             name: "user_balance",
             component: UserBalance
         },
