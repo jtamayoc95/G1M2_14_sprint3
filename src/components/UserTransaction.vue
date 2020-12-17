@@ -27,7 +27,7 @@ let transaction_in = {
 username: this.username,
 value: this.value
 }
-axios.put("https://g1m2-14-sprint3.herokuapp.com/user/transaction/",
+axios.put("https://g1m2-14-sprint2.herokuapp.com/user/transaction/",
 transaction_in, {headers: {}})
 .then((result) => {
 alert("Transaction Correcta, Saldo Restante: " +
