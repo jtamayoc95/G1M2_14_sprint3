@@ -76,12 +76,14 @@ export default {
         this.updateAuth()
       },
     
-    beforeCreate: function(){
-      localStorage.setItem('current_username', 'cabe')
-      localStorage.setItem('isAuth', true)
 
-      this.$router.push({name:"user",params:{username:'cabe'}})
-    }
+    
+  },
+
+  beforeCreate: function(){
+    localStorage.setItem('current_username', 'cabe')
+    localStorage.setItem('isAuth', true)
+
   },
 
   created: function(){
