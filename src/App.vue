@@ -3,8 +3,8 @@
     <div class="header">
       <h1>Midas</h1>
       <nav>
-        <button v-on:click="init" v-if="is_auth" > Inicio </button>
-        <button v-on:click="getBalance" v-if="is_auth" > Información </button>
+        <button v-on:click="init" > Inicio </button>
+        <button v-on:click="getBalance" > Información </button>
         <button v-if="is_auth" > Cambiar contraseña </button>
         <button v-if="is_auth" >Cerrar Sesión</button>
       </nav>
@@ -84,6 +84,10 @@ export default {
     }
   },
 
+  created: function(){
+    this.$router.push({name: "root"})
+    this.updateAuth()
+  }
 
   
 }
