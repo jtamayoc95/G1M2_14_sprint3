@@ -26,7 +26,7 @@ export default {
         this.username = this.$route.params.username
         let self = this
 
-    axios.get("http://127.0.0.1:8000/user/data/" + this.username)
+    axios.get("https://g1m2-14-sprint3.herokuapp.com/user/data/" + this.username)
         .then((result) => {
             self.first_name = result.data.first_name,
             self.last_name = result.data.last_name,

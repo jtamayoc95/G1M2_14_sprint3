@@ -27,7 +27,7 @@ let transaction_in = {
 username: this.username,
 value: this.value
 }
-axios.put("http://127.0.0.1:8000/user/transaction/",
+axios.put("https://g1m2-14-sprint3.herokuapp.com/user/transaction/",
 transaction_in, {headers: {}})
 .then((result) => {
 alert("Transaction Correcta, Saldo Restante: " +

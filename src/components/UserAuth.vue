@@ -32,7 +32,7 @@ import axios from 'axios';
         methods: {
             processAuthUser: function(){
 var self = this
-axios.post("http://127.0.0.1:8000/user/auth/",
+axios.post("https://g1m2-14-sprint3.herokuapp.com/user/auth/",
 self.user_in, {headers: {}})
 .then((result) => {
 alert("Autenticación Exitosa");
