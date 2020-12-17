@@ -1,7 +1,7 @@
 <template>
     <div id="UserBalance">
-        <h2>{{username}}</h2>
-        <h2>Nombre(s): <span> {{first_name}} </span> </h2>
+        
+        <h2>Nombre(s): <span> {{first_name}}</span> </h2>
         <h2>Apellido(s): <span> {{last_name}}</span> </h2>
         <h2>Correo: <span> {{email}}</span> </h2>
         <h2>Celular: <span> {{phone}}</span> </h2>
@@ -28,7 +28,10 @@ export default {
 
     axios.get("http://127.0.0.1:8000/user/data/" + this.username)
         .then((result) => {
-            self.balance = result.data.balance
+            self.first_name = result.data.first_name,
+            self.last_name = result.data.last_name,
+            self.email = result.data.email,
+            self.phone = result.data.phone
         })
         .catch((error) => {
             alert("ERROR Servidor");
@@ -48,10 +51,10 @@ export default {
     }
     #UserBalance h2{
         font-size: 50px;
-        color: #283747;
+        color: #000000;
     }
     #UserBalance span{
-        color: crimson;
+        color: rgb(7, 6, 66);
         font-weight: bold;
     }
 </style>
