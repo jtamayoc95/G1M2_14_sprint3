@@ -4,9 +4,9 @@
       <h1>Midas</h1>
       <nav>
         <button v-on:click="init" > Inicio </button>
-        <button v-on:click="getBalance" > Información </button>
+        <button v-if="is_auth" v-on:click="getBalance" > Información </button>
         <button v-if="is_auth" > Cambiar contraseña </button>
-        <button v-if="is_auth" >Cerrar Sesión</button>
+        <button v-if="is_auth" v-on:click="logOut" >Cerrar Sesión</button>
       </nav>
     </div>
 
