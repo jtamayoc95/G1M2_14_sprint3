@@ -1,14 +1,17 @@
 <template>
   <div id="app" class="app">
+<<<<<<< HEAD
 
+=======
+>>>>>>> aaea473594a5e96715997ebbe81423b1e4163fcf
     <div class="header">
 
       <h1>Midas</h1>
       <nav>
-        <button v-on:click="init" v-if="is_auth" > Inicio </button>
-        <button v-on:click="getData" v-if="is_auth" > Información </button>
+        <button v-on:click="init" > Inicio </button>
+        <button v-if="is_auth" v-on:click="getBalance" > Información </button>
         <button v-if="is_auth" > Cambiar contraseña </button>
-        <button v-if="is_auth" >Cerrar Sesión</button>
+        <button v-if="is_auth" v-on:click="logOut" >Cerrar Sesión</button>
       </nav>
     </div>
 
@@ -30,9 +33,13 @@
 
 
 <script>
+<<<<<<< HEAD
 
 import vueRouter from 'vue-router'
 
+=======
+import vueRouter from 'vue-router'
+>>>>>>> aaea473594a5e96715997ebbe81423b1e4163fcf
 export default {
   name: 'App',
 
@@ -44,7 +51,11 @@ export default {
     }
   },
   
+<<<<<<< HEAD
   methods:{
+=======
+  methods: {
+>>>>>>> aaea473594a5e96715997ebbe81423b1e4163fcf
     updateAuth: function(){
       var self = this
       self.is_auth  = localStorage.getItem('isAuth') || false
@@ -58,6 +69,7 @@ export default {
       }  
     },
 
+<<<<<<< HEAD
     logIn: function(username){
       localStorage.setItem('current_username', username)
       localStorage.setItem('isAuth', true)
@@ -69,6 +81,9 @@ export default {
       localStorage.removeItem('current_username')
       this.updateAuth()
     },
+=======
+
+>>>>>>> aaea473594a5e96715997ebbe81423b1e4163fcf
 
     init: function(){
       if(this.$route.name != "user"){
@@ -79,6 +94,7 @@ export default {
     },
 
     getBalance: function(){
+<<<<<<< HEAD
       if(this.$route.name != "user_balance"){
         let username = localStorage.getItem("current_username")
         this.$router.push({name: "user_balance", params:{ username: username }})
@@ -90,16 +106,51 @@ export default {
       
         let username = localStorage.getItem("current_username")
         this.$router.push({name: "user_transaction", params:{ username: username }})
+=======
+    if(this.$route.name != "user_balance"){
+      let username = localStorage.getItem("current_username")
+      this.$router.push({ name:"user_balance", params:{ username: username }})
+>>>>>>> aaea473594a5e96715997ebbe81423b1e4163fcf
     }
     
   },
 
+<<<<<<< HEAD
+=======
+    logIn: function(username){
+        localStorage.setItem('current_username', username)
+        localStorage.setItem('isAuth', true)
+        this.updateAuth()
+      },
+
+    logOut: function(){
+        localStorage.removeItem('isAuth')
+        localStorage.removeItem('current_username')
+        this.updateAuth()
+        this.$router.push({name: "user_logout"})
+      },
+    
+
+    
+  },
+
+  beforeCreate: function(){
+    localStorage.setItem('current_username', 'cabe')
+    localStorage.setItem('isAuth', true)
+
+  },
+
+>>>>>>> aaea473594a5e96715997ebbe81423b1e4163fcf
   created: function(){
     this.$router.push({name: "root"})
     this.updateAuth()
   }
+
+  
 }
 </script>
+
+
 
 <style>
   body{

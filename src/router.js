@@ -9,6 +9,7 @@ import App from './App'
 
 
 const router = new vueRouter({
+<<<<<<< HEAD
         mode: 'history',
         base: __dirname,
         routes: [
@@ -42,4 +43,31 @@ const router = new vueRouter({
 
 
 
+=======
+    mode: 'history',
+    base: __dirname,
+    routes: [
+        {
+            path: '/',
+            name: "root",
+            component: App
+        },
+        {
+            path: '/user/:username',
+            name: "user",
+            component: User
+        },
+        {
+            path: '/user/data/:username',
+            name: "user_balance",
+            component: UserBalance
+        },
+        {
+            path: '/user/logout',
+            name: "user_logout",
+            component: UserLogout
+        },
+    ]
+})
+>>>>>>> aaea473594a5e96715997ebbe81423b1e4163fcf
 export default router
