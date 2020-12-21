@@ -23,11 +23,12 @@ const router = new vueRouter({
             name: "user_balance",
             component: UserBalance
         },
-        {
+        
+        /*{
             path: '/logout',
             name: "user_logout",
             component: UserLogout
-        },
+        },*/
     ]
 })
 export default router
