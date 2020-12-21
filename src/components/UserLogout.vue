@@ -15,7 +15,7 @@ export default {
         this.username = this.$route.params.username
         let self = this
 
-    axios.get("https://g1m2-14-sprint2.herokuapp.com/user/logout/")
+    axios.get("https://g1m2-14-sprint2.herokuapp.com/logout")
         .catch((error) => {
             alert("ERROR Servidor");
         });
