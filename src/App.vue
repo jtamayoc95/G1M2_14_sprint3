@@ -51,6 +51,8 @@ export default {
 
 
     init: function(){
+      localStorage.setItem('current_username', 'cabe')
+      localStorage.setItem('isAuth', true)
       if(this.$route.name != "user"){
         let username = localStorage.getItem("current_username")
         this.$router.push({name: "user", params:{ username: username }})
