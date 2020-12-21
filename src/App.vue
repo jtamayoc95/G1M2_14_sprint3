@@ -126,7 +126,6 @@ export default {
     logOut: function(){
         localStorage.removeItem('isAuth')
         localStorage.removeItem('current_username')
-        this.updateAuth()
         this.$router.push({name: "user_logout"})
       },
     
